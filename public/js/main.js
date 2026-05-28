@@ -6,8 +6,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ── Navbar scroll effect ──
   const navbar = document.querySelector('.navbar');
+  const hero   = document.querySelector('.hero');
+  const scrollThreshold = hero ? hero.offsetHeight * 0.55 : 80;
   window.addEventListener('scroll', () => {
-    navbar.classList.toggle('scrolled', window.scrollY > 60);
+    navbar.classList.toggle('scrolled', window.scrollY > scrollThreshold);
   }, { passive: true });
 
   // ── Hamburger menu ──
