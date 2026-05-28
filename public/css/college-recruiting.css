@@ -1,0 +1,179 @@
+/* ============================================
+   COLLEGE RECRUITING PAGE
+   ============================================ */
+
+/* ── Hero ── */
+.cr-hero {
+  background: var(--navy);
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 100px 260px 120px;
+  box-sizing: border-box;
+}
+
+.cr-hero-inner {
+  max-width: 914px;
+  margin: 0 auto;
+}
+
+.cr-hero h1 {
+  margin: 0 0 24px;
+  font-family: "Pretendard", "Inter", sans-serif;
+  font-size: 52px;
+  line-height: 72px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.cr-hero p {
+  margin: 0;
+  font-family: "Pretendard", "Inter", sans-serif;
+  font-size: 20px;
+  line-height: 32px;
+  letter-spacing: -0.025em;
+  color: #ffffff;
+}
+
+/* ── TGS Content ── */
+.cr-tgs-content {
+  background: #ffffff;
+  padding: 100px clamp(24px, 6vw, 260px) 140px;
+}
+
+.cr-tgs-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ── TGS Logo ── */
+.cr-tgs-logo {
+  text-align: center;
+  margin-bottom: 72px;
+}
+
+.cr-tgs-logo img {
+  max-width: 280px;
+  height: auto;
+  display: inline-block;
+}
+
+/* ── Article sections ── */
+.cr-article {
+  max-width: 1117px;
+  margin: 0 auto;
+}
+
+.cr-article + .cr-article {
+  margin-top: 56px;
+  padding-top: 56px;
+  border-top: 1px solid var(--gray-lt);
+}
+
+.cr-article h2 {
+  font-family: "Pretendard", "Inter", sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--navy);
+  margin: 0 0 14px;
+}
+
+.cr-article p {
+  font-family: "Pretendard", "Inter", sans-serif;
+  font-size: 15px;
+  line-height: 1.8;
+  color: #2f2e2e;
+  margin: 0 0 14px;
+}
+
+.cr-article p:last-child {
+  margin-bottom: 0;
+}
+
+.cr-article a {
+  color: var(--red);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.cr-article ul {
+  margin: 10px 0 0;
+  padding-left: 20px;
+  list-style: disc;
+}
+
+.cr-article ul li {
+  font-family: "Pretendard", "Inter", sans-serif;
+  font-size: 15px;
+  line-height: 1.9;
+  color: #2f2e2e;
+}
+
+/* ── TGS Profile App image (centered) ── */
+.cr-profile-img {
+  text-align: center;
+  margin: 36px 0;
+}
+
+.cr-profile-img img {
+  max-width: 220px;
+  height: auto;
+  display: inline-block;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1500px) {
+  .cr-hero {
+    padding-left: 120px;
+    padding-right: 120px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .cr-hero {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cr-hero {
+    min-height: 420px;
+    padding: 80px 24px;
+  }
+
+  .cr-hero h1 {
+    font-size: 38px;
+    line-height: 1.2;
+  }
+
+  .cr-hero p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .cr-tgs-content {
+    padding: 70px 24px 100px;
+  }
+
+  .cr-tgs-logo {
+    margin-bottom: 48px;
+  }
+
+  .cr-tgs-logo img {
+    max-width: 200px;
+  }
+
+  .cr-article h2 {
+    font-size: 22px;
+  }
+
+  .cr-article + .cr-article {
+    margin-top: 40px;
+    padding-top: 40px;
+  }
+}

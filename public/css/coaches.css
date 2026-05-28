@@ -1,0 +1,367 @@
+/* ================================
+   Coaching Staff & Directors Page
+================================ */
+
+:root {
+  --coaches-navy: #00142e;
+  --coaches-text: #000000;
+  --coaches-muted: #7e7e7e;
+  --coaches-light: #f8f8f8;
+  --coaches-white: #ffffff;
+}
+
+.coaches-page {
+  background: #ffffff;
+  color: var(--coaches-text);
+  overflow: hidden;
+}
+
+.coaches-container {
+  width: 100%;
+  padding-left: 260px;
+  padding-right: 260px;
+  box-sizing: border-box;
+}
+
+/* Hero */
+
+.coaches-hero {
+  min-height: 420px;
+  background: var(--coaches-navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 100px 260px 120px;
+  box-sizing: border-box;
+}
+
+.coaches-hero-inner {
+  max-width: 914px;
+}
+
+.coaches-hero h1 {
+  margin: 0 0 24px;
+  font-family: "Pretendard", "Inter", sans-serif;
+  font-size: 52px;
+  line-height: 72px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.coaches-hero p {
+  margin: 0;
+  font-family: "Pretendard", "Inter", sans-serif;
+  font-size: 20px;
+  line-height: 32px;
+  letter-spacing: -0.025em;
+  color: #ffffff;
+}
+
+/* Staff Section */
+
+.staff-section {
+  background: #ffffff;
+  padding: 120px 0 180px;
+}
+
+.staff-section-title {
+  margin: 0 0 95px;
+  font-family: "Pretendard", "Inter", sans-serif;
+  font-size: 42px;
+  line-height: 1.2;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  text-align: center;
+  color: #000000;
+}
+
+.directors-title {
+  margin-top: 160px;
+}
+
+/* Grid */
+
+.coaches-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 56px 32px;
+}
+
+.directors-grid {
+  row-gap: 56px;
+}
+
+.coach-card {
+  width: 100%;
+}
+
+.coach-photo {
+  width: 100%;
+  aspect-ratio: 320 / 328;
+  height: auto;
+  background: var(--coaches-light);
+  overflow: hidden;
+  margin-bottom: 28px;
+}
+
+.coach-photo img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.coach-photo.placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.coach-photo.placeholder img {
+  width: 160px;
+  height: 164px;
+  object-fit: contain;
+}
+
+.coach-card h3 {
+  margin: 0 0 8px;
+  font-family: "Inter", sans-serif;
+  font-size: 24px;
+  line-height: 1.2;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #000000;
+}
+
+.coach-card p {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  line-height: 1.2;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: var(--coaches-muted);
+}
+
+/* ── Hover effect (cards with real photos) ── */
+
+.coach-card.has-modal {
+  cursor: pointer;
+}
+
+.coach-card.has-modal .coach-photo {
+  position: relative;
+  overflow: hidden;
+}
+
+.coach-card.has-modal .coach-photo::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 20, 46, 0);
+  color: rgba(255, 255, 255, 0);
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 20px;
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.coach-card.has-modal:hover .coach-photo::after {
+  background: rgba(0, 20, 46, 0.55);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.coach-card.has-modal .coach-photo img {
+  transition: transform 0.4s ease;
+}
+
+.coach-card.has-modal:hover .coach-photo img {
+  transform: scale(1.0);
+}
+
+/* ── Modal Overlay ── */
+
+.coach-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: #111111;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.coach-modal-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.coach-modal-close {
+  position: absolute;
+  top: 36px;
+  right: 56px;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  padding: 8px;
+}
+
+.coach-modal-close:hover {
+  color: #ffffff;
+}
+
+.coach-modal-content {
+  display: flex;
+  align-items: center;
+  gap: 72px;
+  max-width: 960px;
+  width: 90%;
+  padding: 0 40px;
+}
+
+.coach-modal-photo {
+  flex-shrink: 0;
+}
+
+.coach-modal-photo img {
+  width: 260px;
+  height: 266px;
+  object-fit: cover;
+  display: block;
+}
+
+.coach-modal-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.coach-modal-label {
+  margin: 0 0 10px;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.coach-modal-name {
+  margin: 0 0 24px;
+  font-family: "Inter", sans-serif;
+  font-size: clamp(32px, 3.5vw, 48px);
+  font-weight: 700;
+  line-height: 1.1;
+  color: #ffffff;
+}
+
+.coach-modal-bio {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.78);
+  max-width: 560px;
+}
+
+/* Responsive */
+
+@media (max-width: 1500px) {
+  .coaches-container {
+    padding-left: 120px;
+    padding-right: 120px;
+  }
+
+  .coaches-hero {
+    padding-left: 120px;
+    padding-right: 120px;
+  }
+
+  .coaches-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 56px 28px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .coaches-container {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+
+  .coaches-hero {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+
+  .coaches-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 48px 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .coaches-container {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .coaches-hero {
+    min-height: 420px;
+    padding: 80px 24px;
+  }
+
+  .coaches-hero h1 {
+    font-size: 38px;
+    line-height: 1.2;
+  }
+
+  .coaches-hero p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .staff-section {
+    padding: 80px 0 100px;
+  }
+
+  .staff-section-title {
+    font-size: 32px;
+    margin-bottom: 60px;
+  }
+
+  .directors-title {
+    margin-top: 100px;
+  }
+
+  .coaches-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .coach-photo {
+    height: auto;
+    aspect-ratio: 320 / 328;
+  }
+
+  .coach-card h3 {
+    font-size: 22px;
+  }
+
+  .coach-card p {
+    font-size: 16px;
+    line-height: 1.35;
+  }
+}

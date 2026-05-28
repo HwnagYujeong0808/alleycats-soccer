@@ -1,0 +1,441 @@
+/* ============================================
+   JOIN THE CATS PAGE
+   Uses shared global styles from style.css:
+   - :root color variables
+   - navbar / footer
+   - section-title
+   - programs / programs-grid / program-card
+   ============================================ */
+
+.join-container {
+  width: min(100% - 48px, 1180px);
+  margin: 0 auto;
+}
+
+.join-narrow {
+  width: min(100% - 48px, 980px);
+}
+
+.join-list-width {
+  width: min(100% - 48px, 940px);
+}
+
+.join-hero {
+  margin-top: 0;
+  min-height: 360px;
+  background: var(--navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-top: var(--nav-h, 96px);
+  box-sizing: border-box;
+}
+
+.join-hero h1 {
+  font-family: var(--font-primary);
+  font-size: clamp(36px, 5vw, 56px);
+  line-height: 1.1;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: -0.03em;
+}
+
+.join-register {
+  padding: 92px 0 80px;
+  background: var(--white);
+}
+
+.join-section-title {
+  font-family: var(--font-primary);
+  font-size: clamp(30px, 3vw, 42px);
+  line-height: 1.2;
+  font-weight: 500;
+  text-align: center;
+  color: #111;
+  margin-bottom: 72px;
+}
+
+/* timeline */
+.join-steps {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: end;
+  margin: 0 auto 72px;
+  max-width: 760px;
+}
+
+.join-steps::before {
+  content: "";
+  position: absolute;
+  left: 11%;
+  right: 11%;
+  bottom: 12px;
+  height: 2px;
+  background: #DCDCDC;
+}
+
+.join-step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  z-index: 1;
+}
+
+.join-step-label {
+  font-family: var(--font-primary);
+  font-size: 13px;
+  line-height: 1.35;
+  font-weight: 700;
+  color: #4B4B4B;
+  text-align: center;
+  min-height: 38px;
+}
+
+.join-step.is-active .join-step-label,
+.join-step:last-child .join-step-label {
+  color: #2E8BFF;
+}
+
+.join-step-dot {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 3px solid #D4D4D4;
+  box-shadow: 0 0 0 8px rgba(0,0,0,.04);
+}
+
+.join-step.is-active .join-step-dot,
+.join-step:last-child .join-step-dot {
+  border-color: #2E8BFF;
+}
+
+/* step cards */
+.join-step-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 42px;
+  align-items: stretch;
+}
+
+.join-step-card {
+  min-height: 250px;
+  background: #F2F2F2;
+  border: 1px solid #E5E5E5;
+  box-shadow: 0 3px 12px rgba(0,0,0,.08);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.join-portal-card {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: var(--white);
+}
+
+.join-card-logo {
+  width: 64px;
+  height: 64px;
+  background: var(--red);
+  border-radius: 4px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 34px;
+}
+
+.join-card-logo img {
+  width: 44px;
+  height: auto;
+}
+
+.join-step-card h3 {
+  font-family: var(--font-primary);
+  font-size: 22px;
+  line-height: 1.2;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 12px;
+}
+
+.join-step-card p {
+  font-family: var(--font-primary);
+  font-size: 14px;
+  line-height: 1.55;
+  color: #555;
+}
+
+.join-red-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 128px;
+  height: 42px;
+  margin-top: 24px;
+  padding: 0 18px;
+  background: var(--red);
+  color: var(--white);
+  font-family: var(--font-primary);
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: background var(--transition);
+}
+
+.join-red-btn:hover {
+  background: #c41525;
+}
+
+.join-screenshot {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  background: #fff;
+  border: 1px solid #DADADA;
+  margin-bottom: 18px;
+  overflow: hidden;
+}
+
+.join-screenshot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+/* program list */
+.join-program-list {
+  padding: 36px 0 84px;
+  background: var(--white);
+}
+
+.join-program-list .join-section-title {
+  margin-bottom: 62px;
+}
+
+.program-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.program-list-card {
+  display: grid;
+  grid-template-columns: 56px 1fr auto;
+  gap: 28px;
+  align-items: center;
+  min-height: 112px;
+  padding: 26px 28px;
+  background: var(--white);
+  border: 1px solid #D9D9D9;
+}
+
+.program-list-logo {
+  width: 48px;
+  height: 48px;
+  background: var(--red);
+  display: grid;
+  place-items: center;
+  border-radius: 3px;
+}
+
+.program-list-logo img {
+  width: 34px;
+  height: auto;
+}
+
+.program-list-text h3 {
+  font-family: var(--font-primary);
+  font-size: 20px;
+  line-height: 1.25;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 6px;
+}
+
+.program-list-text p {
+  font-family: var(--font-primary);
+  font-size: 13px;
+  line-height: 1.5;
+  color: #555;
+  max-width: 680px;
+}
+
+.program-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 68px;
+  height: 30px;
+  padding: 0 14px;
+  border-radius: 999px;
+  background: #E8F2FF;
+  color: #4A9BFF;
+  font-family: var(--font-primary);
+  font-size: 13px;
+  line-height: 1;
+  font-weight: 700;
+}
+
+/* reuse home team cards, but adjust join page spacing */
+.join-programs {
+  padding-top: 70px;
+  padding-bottom: 132px;
+}
+
+.join-programs .programs-header {
+  margin-bottom: 64px;
+}
+
+.join-programs-subtitle {
+  font-family: var(--font-primary);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--gray-mid);
+  text-align: center;
+  max-width: 640px;
+  margin: -40px auto 0;
+}
+
+.join-programs .programs-grid {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0;
+  gap: 52px;
+}
+
+.join-programs .program-card {
+  width: 330px;
+}
+
+.join-programs .program-card h3 {
+  font-size: 22px;
+  line-height: 1.25;
+}
+
+.btn-card {
+  display: inline-block;
+  font-family: var(--font-primary);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--white);
+  background: var(--red);
+  border: none;
+  padding: 11px 18px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background .2s ease;
+}
+.btn-card:hover {
+  background: var(--red-dark);
+  color: var(--white);
+}
+
+.join-programs .program-card .btn-card {
+  font-size: 13px;
+  padding: 9px 14px;
+}
+
+/* responsive */
+@media (max-width: 1024px) {
+  .join-step-cards {
+    gap: 24px;
+  }
+
+  .join-programs .programs-grid {
+    gap: 28px;
+  }
+
+  .join-programs .program-card {
+    width: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .join-hero {
+    min-height: 260px;
+  }
+
+  .join-register {
+    padding: 64px 0;
+  }
+
+  .join-section-title {
+    margin-bottom: 46px;
+  }
+
+  .join-steps {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    align-items: start;
+    margin-bottom: 48px;
+  }
+
+  .join-steps::before {
+    display: none;
+  }
+
+  .join-step {
+    align-items: flex-start;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    gap: 16px;
+  }
+
+  .join-step-label {
+    text-align: left;
+    min-height: 0;
+  }
+
+  .join-step-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .program-list-card {
+    grid-template-columns: 48px 1fr;
+  }
+
+  .program-tag {
+    grid-column: 2;
+    justify-self: start;
+    margin-top: 8px;
+  }
+
+  .join-programs .programs-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .join-programs .program-card {
+    width: min(100%, 360px);
+  }
+}
+
+@media (max-width: 480px) {
+  .join-container,
+  .join-narrow,
+  .join-list-width {
+    width: min(100% - 32px, 1180px);
+  }
+
+  .join-step-card {
+    padding: 20px;
+  }
+
+  .program-list-card {
+    gap: 16px;
+    padding: 22px 18px;
+  }
+
+  .program-list-text h3 {
+    font-size: 17px;
+  }
+}

@@ -1,0 +1,404 @@
+/* ================================
+   Values & Philosophy Page
+================================ */
+
+:root {
+  --values-navy: #00142e;
+  --values-navy-light: #102b4f;
+  --values-red: #c4111f;
+  --values-gray: #edeeef;
+  --values-text: #333333;
+  --values-white: #ffffff;
+}
+
+.values-page {
+  background: #ffffff;
+  color: var(--values-text);
+  overflow: hidden;
+}
+
+.values-container {
+  width: 100%;
+  padding-left: 260px;
+  padding-right: 260px;
+  box-sizing: border-box;
+}
+
+/* Hero */
+
+.values-hero {
+  min-height: 420px;
+  background: var(--values-navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 180px 24px 120px;
+  box-sizing: border-box;
+}
+
+.values-hero-inner {
+  max-width: 914px;
+}
+
+.values-hero h1 {
+  margin: 0 0 24px;
+  font-family: "Pretendard", "Inter", sans-serif;
+  font-size: 52px;
+  line-height: 72px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.values-hero p {
+  margin: 0;
+  font-family: "Pretendard", "Inter", sans-serif;
+  font-size: 20px;
+  line-height: 32px;
+  letter-spacing: -0.025em;
+  color: #ffffff;
+}
+
+/* Shared */
+
+.section-heading {
+  text-align: center;
+}
+
+.section-heading h2 {
+  margin: 0 0 26px;
+  font-family: "Pretendard", "Inter", sans-serif;
+  font-size: 42px;
+  line-height: 1.2;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+.section-heading p {
+  max-width: 954px;
+  margin: 0 auto;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+}
+
+.dark-text h2 {
+  color: #000000;
+}
+
+.dark-text p {
+  color: #333333;
+}
+
+/* Core Values */
+
+.core-values-section {
+  background: #ffffff;
+  padding: 145px 0 80px;
+}
+
+.core-values-grid {
+  margin-top: 95px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px 40px;
+}
+
+.core-value-card {
+  min-height: 158px;
+  background: var(--values-gray);
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  padding: 43px;
+  box-sizing: border-box;
+}
+
+.value-letter {
+  width: 72px;
+  height: 72px;
+  background: var(--values-navy);
+  border-radius: 6px;
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+  font-size: 52px;
+  line-height: 72px;
+  font-weight: 500;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.core-value-card h3 {
+  margin: 0 0 8px;
+  font-family: "Inter", sans-serif;
+  font-size: 24px;
+  line-height: 1.4;
+  font-weight: 500;
+  color: #333333;
+}
+
+.core-value-card p {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  line-height: 1.4;
+  color: #333333;
+}
+
+/* Philosophy */
+
+.philosophy-section {
+  background: #ffffff;
+  padding: 80px 0 145px;
+}
+
+.philosophy-card-grid {
+  margin-top: 105px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+.philosophy-card {
+  min-height: 312px;
+  background: #ffffff;
+  border-top: 4px solid #ed1a2b;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 74px 43px 50px;
+  box-sizing: border-box;
+}
+
+.philosophy-card h3 {
+  margin: 0 0 16px;
+  font-family: "Inter", sans-serif;
+  font-size: 28px;
+  line-height: 1.4;
+  font-weight: 500;
+  color: var(--values-red);
+}
+
+.philosophy-card p {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  line-height: 1.4;
+  color: #333333;
+}
+
+/* Pathway */
+
+.pathway-section {
+  background: linear-gradient(91.77deg, #102b4f 17%, #00142e 52.87%);
+  padding: 130px 0 150px;
+  color: #ffffff;
+}
+
+.pathway-top {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 60px;
+}
+
+.pathway-image-wrap {
+  width: 100%;
+}
+
+.pathway-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.pathway-text {
+  max-width: 666px;
+  text-align: right;
+}
+
+.pathway-text h2 {
+  margin: 0 0 26px;
+  font-family: "Pretendard", "Inter", sans-serif;
+  font-size: 42px;
+  line-height: 1.2;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+}
+
+.pathway-text p {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+}
+
+.pathway-card-grid {
+  margin-top: 120px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 34px 40px;
+}
+
+.pathway-card {
+  min-height: 312px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 50px 43px;
+  box-sizing: border-box;
+}
+
+.pathway-card h3 {
+  margin: 0 0 8px;
+  font-family: "Inter", sans-serif;
+  font-size: 24px;
+  line-height: 1.4;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.pathway-card p {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+}
+
+/* Responsive */
+
+@media (max-width: 1500px) {
+  .values-container {
+    padding-left: 120px;
+    padding-right: 120px;
+  }
+
+  .values-hero {
+    padding-left: 120px;
+    padding-right: 120px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .values-container {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+
+  .values-hero {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+
+  .core-values-grid,
+  .philosophy-card-grid,
+  .pathway-card-grid,
+  .pathway-top {
+    grid-template-columns: 1fr;
+  }
+
+  .pathway-text {
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  .pathway-image-wrap {
+    max-width: 710px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .values-container {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .values-hero {
+    min-height: 420px;
+    padding: 80px 24px;
+  }
+
+  .values-hero h1 {
+    font-size: 38px;
+    line-height: 1.2;
+  }
+
+  .values-hero p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .section-heading h2,
+  .pathway-text h2 {
+    font-size: 32px;
+  }
+
+  .core-values-section {
+    padding: 80px 0 60px;
+  }
+
+  .core-values-grid {
+    margin-top: 50px;
+  }
+
+  .core-value-card {
+    min-height: auto;
+    padding: 28px;
+    gap: 20px;
+  }
+
+  .value-letter {
+    width: 56px;
+    height: 56px;
+    font-size: 40px;
+    line-height: 56px;
+  }
+
+  .core-value-card h3,
+  .pathway-card h3 {
+    font-size: 20px;
+  }
+
+  .core-value-card p,
+  .pathway-card p,
+  .philosophy-card p,
+  .pathway-text p,
+  .section-heading p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .philosophy-section {
+    padding: 60px 0 80px;
+  }
+
+  .philosophy-card-grid {
+    margin-top: 60px;
+  }
+
+  .philosophy-card {
+    min-height: auto;
+    padding: 45px 28px;
+  }
+
+  .philosophy-card h3 {
+    font-size: 22px;
+  }
+
+  .pathway-section {
+    padding: 80px 0;
+  }
+
+  .pathway-card-grid {
+    margin-top: 70px;
+  }
+
+  .pathway-card {
+    min-height: auto;
+    padding: 34px 28px;
+  }
+}

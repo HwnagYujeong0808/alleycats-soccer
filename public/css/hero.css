@@ -1,0 +1,82 @@
+/* ============================================
+   ALLEYCATS — Unified Inner Page Hero
+   Applies to all inner pages via main.hbs
+   ============================================ */
+
+.site-hero {
+  width: 100%;
+  min-height: 500px;
+  background: var(--navy, #00142E);
+  margin-top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: calc(var(--nav-h, 96px) + 80px) 260px 120px;
+  box-sizing: border-box;
+}
+
+.site-hero__inner {
+  width: min(914px, 100%);
+}
+
+.site-hero h1 {
+  font-family: var(--font-primary, 'Pretendard', sans-serif);
+  font-size: clamp(38px, 4vw, 52px);
+  font-weight: 600;
+  line-height: 1.38;
+  color: #fff;
+  margin-bottom: 24px;
+}
+
+.site-hero h1:last-child {
+  margin-bottom: 0;
+}
+
+.site-hero p {
+  font-family: var(--font-primary, 'Pretendard', sans-serif);
+  font-size: clamp(16px, 1.3vw, 20px);
+  line-height: 1.6;
+  letter-spacing: -0.025em;
+  color: rgba(255, 255, 255, 0.88);
+  margin: 0 auto;
+}
+
+/* Badge — used on "coming soon" pages */
+.site-hero__badge {
+  display: inline-block;
+  margin-bottom: 24px;
+  padding: 6px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  font-family: var(--font-primary, 'Pretendard', sans-serif);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+/* ── Responsive ── */
+@media (max-width: 1500px) {
+  .site-hero {
+    padding: calc(var(--nav-h, 96px) + 80px) 40px 120px;
+  }
+}
+
+@media (max-width: 900px) {
+  .site-hero {
+    min-height: 420px;
+    padding: calc(var(--nav-h, 96px) + 60px) 24px 90px;
+  }
+}
+
+@media (max-width: 640px) {
+  .site-hero {
+    min-height: 360px;
+    padding: calc(var(--nav-h, 96px) + 48px) 20px 80px;
+  }
+
+  .site-hero h1 {
+    margin-bottom: 16px;
+  }
+}

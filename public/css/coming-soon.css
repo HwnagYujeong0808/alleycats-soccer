@@ -1,0 +1,64 @@
+/* ============================================
+   COMING SOON — shared hero for placeholder pages
+   ============================================ */
+
+.cs-hero {
+  background: var(--navy);
+  min-height: 547px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 100px 260px 120px;
+  box-sizing: border-box;
+}
+
+.cs-hero-inner {
+  max-width: 914px;
+  margin: 0 auto;
+}
+
+.cs-badge {
+  display: inline-block;
+  margin-bottom: 24px;
+  padding: 6px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.cs-hero h1 {
+  margin: 0 0 24px;
+  font-family: "Pretendard", "Inter", sans-serif;
+  font-size: 52px;
+  line-height: 72px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.cs-hero p {
+  margin: 0;
+  font-family: "Pretendard", "Inter", sans-serif;
+  font-size: 20px;
+  line-height: 32px;
+  letter-spacing: -0.025em;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+@media (max-width: 1500px) {
+  .cs-hero { padding-left: 120px; padding-right: 120px; }
+}
+
+@media (max-width: 1200px) {
+  .cs-hero { padding-left: 48px; padding-right: 48px; }
+}
+
+@media (max-width: 768px) {
+  .cs-hero { min-height: 420px; padding: 80px 24px; }
+  .cs-hero h1 { font-size: 38px; line-height: 1.2; }
+  .cs-hero p { font-size: 16px; line-height: 1.6; }
+}

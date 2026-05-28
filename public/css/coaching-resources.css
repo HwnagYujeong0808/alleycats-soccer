@@ -1,0 +1,299 @@
+/* ============================================
+   COACHING RESOURCES PAGE
+   Uses shared navbar/footer styles from style.css
+   ============================================ */
+
+:root {
+  --cr-navy: #00142E;
+  --cr-navy-mid: #102B4F;
+  --cr-red: #ED1A2B;
+  --cr-white: #FFFFFF;
+  --cr-text: #333333;
+  --cr-muted: #8A8F98;
+  --cr-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+  --cr-container: 1400px;
+}
+
+/* ---------- Page Hero ---------- */
+.cr-hero {
+  width: 100%;
+  min-height: 420px;
+  padding: 100px 24px 120px;
+  margin-top: 0;
+  padding-top: calc(var(--nav-h, 96px) + 80px);
+  background: var(--cr-navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.cr-hero__inner {
+  width: 100%;
+  max-width: 914px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.cr-hero h1 {
+  margin: 0;
+  font-family: var(--font-primary, 'Pretendard', sans-serif);
+  font-weight: 600;
+  font-size: clamp(36px, 3vw, 52px);
+  line-height: 1.38;
+  color: var(--cr-white);
+}
+
+.cr-hero p {
+  margin: 0;
+  font-family: var(--font-primary, 'Pretendard', sans-serif);
+  font-weight: 400;
+  font-size: clamp(15px, 1.1vw, 20px);
+  line-height: 1.6;
+  letter-spacing: -0.025em;
+  color: var(--cr-white);
+}
+
+/* ---------- Coaching Opportunities ---------- */
+.cr-opps {
+  width: 100%;
+  background: linear-gradient(90deg, var(--cr-navy) 15.56%, var(--cr-navy-mid) 57.4%);
+  padding: 164px 24px 170px;
+  overflow: hidden;
+}
+
+.cr-opps__inner {
+  width: 100%;
+  max-width: var(--cr-container);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(320px, 485px) minmax(520px, 1fr);
+  align-items: center;
+  gap: clamp(80px, 8vw, 140px);
+}
+
+.cr-opps__copy {
+  color: var(--cr-white);
+}
+
+.cr-opps__copy h2 {
+  margin: 0 0 24px;
+  font-family: var(--font-primary, 'Pretendard', sans-serif);
+  font-weight: 500;
+  font-size: clamp(32px, 2.3vw, 42px);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.cr-opps__copy p,
+.cr-opps__copy li {
+  font-family: var(--font-primary, 'Pretendard', sans-serif);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 2.125;
+  letter-spacing: -0.01em;
+}
+
+.cr-opps__copy p {
+  margin: 0 0 4px;
+}
+
+.cr-opps__copy ul {
+  margin: 0;
+  padding-left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.cr-opps__copy a {
+  color: var(--cr-white);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.cr-opps__media {
+  display: flex;
+  align-items: center;
+}
+
+.cr-opps__media img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ---------- Coaching Links ---------- */
+.cr-links {
+  width: 100%;
+  background: var(--cr-white);
+  padding: 88px 24px 176px;
+}
+
+.cr-links__inner {
+  width: 100%;
+  max-width: var(--cr-container);
+  margin: 0 auto;
+}
+
+.cr-section-title {
+  margin: 0 0 88px;
+  font-family: var(--font-primary, 'Pretendard', sans-serif);
+  font-weight: 400;
+  font-size: clamp(32px, 2.2vw, 42px);
+  line-height: 1.2;
+  text-align: center;
+  letter-spacing: -0.01em;
+  color: #000;
+}
+
+.cr-resource-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.cr-resource-card {
+  width: 100%;
+  min-height: 158px;
+  padding: 43px 42px;
+  background: var(--cr-white);
+  box-shadow: var(--cr-shadow);
+  display: grid;
+  grid-template-columns: 72px 1fr 31px;
+  align-items: center;
+  gap: 42px;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.cr-resource-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+}
+
+.cr-resource-card__icon {
+  width: 72px;
+  height: 72px;
+  flex-shrink: 0;
+  display: block;
+}
+
+.cr-resource-card__icon img {
+  width: 72px;
+  height: 72px;
+  display: block;
+  object-fit: contain;
+}
+
+.cr-resource-card__title {
+  font-family: var(--font-inter, 'Inter', sans-serif);
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  color: var(--cr-text);
+}
+
+.cr-resource-card__external {
+  width: 31px;
+  height: 31px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cr-resource-card__external img {
+  width: 31px;
+  height: 31px;
+  object-fit: contain;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1200px) {
+  .cr-opps__inner {
+    grid-template-columns: 1fr;
+    gap: 72px;
+  }
+
+  .cr-opps__copy {
+    max-width: 640px;
+  }
+
+  .cr-opps__media {
+    max-width: 820px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cr-hero {
+    min-height: 420px;
+    padding: 80px 20px;
+  }
+
+  .cr-opps {
+    padding: 90px 20px;
+  }
+
+  .cr-opps__copy h2 {
+    font-size: 30px;
+  }
+
+  .cr-opps__copy p,
+  .cr-opps__copy li {
+    font-size: 15px;
+    line-height: 1.85;
+  }
+
+  .cr-links {
+    padding: 72px 20px 120px;
+  }
+
+  .cr-section-title {
+    margin-bottom: 48px;
+  }
+
+  .cr-resource-card {
+    min-height: 112px;
+    padding: 24px;
+    grid-template-columns: 56px 1fr 24px;
+    gap: 20px;
+  }
+
+  .cr-resource-card__icon {
+    width: 56px;
+    height: 56px;
+  }
+
+  .cr-resource-card__icon img {
+    width: 56px;
+    height: 56px;
+  }
+
+  .cr-resource-card__title {
+    font-size: 18px;
+  }
+
+  .cr-resource-card__external,
+  .cr-resource-card__external img {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cr-hero p br {
+    display: none;
+  }
+
+  .cr-resource-card {
+    grid-template-columns: 52px 1fr;
+  }
+
+  .cr-resource-card__external {
+    display: none;
+  }
+}
