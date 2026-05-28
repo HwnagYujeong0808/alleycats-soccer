@@ -6,7 +6,7 @@ Official website for Alleycats Soccer Club, built with Node.js, Express, and Han
 
 ---
 
-## 🛠 Tech Stack
+## Tech Stack
 
 | Layer | Technology |
 |-------|-----------|
@@ -18,7 +18,7 @@ Official website for Alleycats Soccer Club, built with Node.js, Express, and Han
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 alleycats-soccer/
@@ -52,7 +52,7 @@ alleycats-soccer/
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### 1. Install dependencies
 ```bash
@@ -95,7 +95,7 @@ http://localhost:3000
 
 ---
 
-## 🎨 Design System
+## Design System
 
 **Colors**
 ```css
