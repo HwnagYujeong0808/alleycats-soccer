@@ -2,7 +2,7 @@
 
 Official website for Alleycats Soccer Club, built with Node.js, Express, and Handlebars.
 
-🌐 **Live Site:** [alleycats-soccer.onrender.com](https://alleycats-soccer.onrender.com)
+🌐 **Live Site:** [alleycats-soccer.onrender.com](https://alleycatsoccer.com/)
 
 ---
 
