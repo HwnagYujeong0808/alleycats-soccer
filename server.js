@@ -17,8 +17,46 @@ app.set('views', path.join(__dirname, 'views'));
 // Static files
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Instagram feed (Instagram API with Instagram Login). Without INSTAGRAM_TOKEN the
+// home page falls back to the static cards in index.hbs.
+// ponytail: refreshed token lives in memory only; if the server stays down past the
+// 60-day expiry, generate a new token and update INSTAGRAM_TOKEN.
+let igToken = process.env.INSTAGRAM_TOKEN;
+let igCache = { posts: null, at: 0 };
+let igRefreshedAt = Date.now();
+
+async function getInstagramPosts() {
+  if (!igToken) return null;
+  if (Date.now() - igCache.at < 60 * 60 * 1000) return igCache.posts;
+  igCache.at = Date.now(); // set first so a failing API isn't hit on every request
+  try {
+    if (Date.now() - igRefreshedAt > 24 * 60 * 60 * 1000) {
+      const r = await fetch(`https://graph.instagram.com/refresh_access_token?grant_type=ig_refresh_token&access_token=${igToken}`);
+      if (r.ok) { igToken = (await r.json()).access_token; igRefreshedAt = Date.now(); }
+    }
+    const fields = 'caption,media_type,media_url,thumbnail_url,permalink,timestamp,like_count';
+    const r = await fetch(`https://graph.instagram.com/me/media?fields=${fields}&limit=3&access_token=${igToken}`);
+    if (!r.ok) throw new Error(`Instagram API ${r.status}`);
+    const { data } = await r.json();
+    igCache.posts = data.map((p, i) => {
+      const caption = (p.caption || '').split('\n')[0];
+      return {
+        url: p.permalink,
+        image: p.media_type === 'VIDEO' ? p.thumbnail_url : p.media_url,
+        caption: caption.length > 70 ? caption.slice(0, 67) + '..' : caption,
+        date: new Date(p.timestamp).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }),
+        likes: p.like_count,
+        delay: i / 10,
+      };
+    });
+  } catch (err) {
+    console.error('Instagram fetch failed:', err.message); // keep last good posts
+  }
+  return igCache.posts;
+}
+
 // Page routes
-app.get('/',                    (req, res) => res.render('index',               { title: 'Alleycats Soccer Club' }));
+app.get('/', async (req, res) => res.render('index', { title: 'Alleycats Soccer Club', instagram: await getInstagramPosts() }));
 app.get('/about',               (req, res) => res.render('about',               { title: 'About Us | Alleycats Soccer Club' }));
 app.get('/values',              (req, res) => res.render('values',              { title: 'Values & Philosophy | Alleycats Soccer Club' }));
 app.get('/coaches',             (req, res) => res.render('coaches',             { title: 'Coaching Staff | Alleycats Soccer Club' }));

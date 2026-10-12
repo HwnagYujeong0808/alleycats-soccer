@@ -148,6 +148,31 @@
       </header>
 
       <div class="card-grid card-grid-3 social-grid">
+        {{#if instagram}}
+        {{#each instagram}}
+        <article class="social-card fade-up" style="transition-delay:{{delay}}s">
+          <a href="{{url}}" target="_blank" rel="noopener" style="display:block;color:inherit;">
+            <div class="social-card-img">
+              <img src="{{image}}" alt="Instagram post" loading="lazy" />
+            </div>
+            <div class="social-card-body">
+              <p class="social-card-caption">{{caption}}</p>
+              <p class="social-card-date">{{date}}</p>
+              <div class="social-card-footer">
+                <div class="social-card-account">
+                  <div class="social-avatar-img"><img src="/images/home/insta_profile.svg" alt="AC" loading="lazy" /></div>
+                  <div>
+                    <div class="social-handle">@albanyalleycats</div>
+                    <div class="social-name">Alleycats Soccer Club</div>
+                  </div>
+                </div>
+                {{#if likes}}<div class="social-likes"><span class="heart-icon">♥</span><span class="likes-count">{{likes}}</span></div>{{/if}}
+              </div>
+            </div>
+          </a>
+        </article>
+        {{/each}}
+        {{else}}
         <article class="social-card fade-up">
           <a href="https://www.instagram.com/p/DX2EpK3juU3/" target="_blank" rel="noopener" style="display:block;color:inherit;">
             <div class="social-card-img">
@@ -213,6 +238,7 @@
             </div>
           </a>
         </article>
+        {{/if}}
       </div>
     </div>
   </section>

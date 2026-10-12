@@ -1,0 +1,108 @@
+/* ============================================
+   GIRLS PAGE
+   ============================================ */
+
+.girls-container {
+  width: min(1400px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.girls-section {
+  background: #fff;
+  padding: 100px 0;
+}
+
+.girls-section--alt {
+  background: var(--offwhite, #F5F5F5);
+}
+
+.girls-section__title {
+  font-family: var(--font-primary, 'Pretendard', sans-serif);
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 46px;
+  letter-spacing: -0.01em;
+  color: #000;
+  margin-bottom: 32px;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px;
+}
+
+.team-card {
+  position: relative;
+  border: 1px solid var(--gray-lt, #E3E3E3);
+  overflow: hidden;
+  background: #fff;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-4px);
+  border-color: #c5c8ce;
+  box-shadow: 0 16px 40px rgba(0,0,0,.08);
+}
+
+.team-card__image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: linear-gradient(135deg, #E3E3E3 0%, #CFCFCF 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.team-card__placeholder {
+  font-family: var(--font-inter, 'Inter', sans-serif);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #9A9A9A;
+}
+
+.team-card__title {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  right: 24px;
+  padding: 12px 20px;
+  background: var(--red, #ED1A2B);
+  box-shadow: 0 4px 14px rgba(0,0,0,.18);
+  color: #fff;
+  font-family: var(--font-primary, 'Pretendard', sans-serif);
+  font-size: 17px;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: -0.01em;
+}
+
+@media (max-width: 900px) {
+  .girls-section {
+    padding: 72px 0;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 640px) {
+  .girls-container {
+    width: min(100% - 32px, 1400px);
+  }
+
+  .girls-section__title {
+    font-size: 30px;
+    line-height: 38px;
+  }
+
+  .team-card__title {
+    font-size: 15px;
+    padding: 10px 16px;
+  }
+}

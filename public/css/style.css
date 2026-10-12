@@ -1061,7 +1061,9 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 32px;
+  flex-direction: column;
+  gap: 6px;
+  text-align: center;
   padding-top: 16px;
   padding-bottom: 28px;
 }
